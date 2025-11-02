@@ -15,12 +15,15 @@ import { GithubApiService } from "../../services/github.service";
 export class SearchComponent{    
     searchUser = ""
     isError:any = false
+    isEmpty:any = false
     @Input() allUsers:any
     @Input() tempAllUsers:any    
     @Output() loadingChange = new EventEmitter<any>;
     
     constructor( private apiService: GithubApiService){}
     
+    
+
     // handleKeyChange($event: any){
     //     const name = $event.target.value
     //     this.searchUser = name
@@ -33,7 +36,7 @@ export class SearchComponent{
         this.loadingChange.emit(true)
         this.apiService.getUserByUsername(this.searchUser).subscribe((res: GitUser[])=>{        
             this.allUsers = [res]                
-            this.loadingChange.emit(false)             
+            this.loadingChange.emit(false)           
         },(err:any)=>{            
             this.isError = true                                   
             this.loadingChange.emit(false)

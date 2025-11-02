@@ -25,7 +25,7 @@ export class HomepageComponent implements OnInit{
         // console.log('USERS:', res);
         this.tempAllUsers = [...res]
         this.allUsers = res
-        console.log("this.allUsers",this.allUsers);
+        
         
         },(err:any)=>{
             console.log("err",err);

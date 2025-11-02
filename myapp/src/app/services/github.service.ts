@@ -16,7 +16,8 @@ export class GithubApiService{
 
         return this.http.get<GitUser[]>(`${envirnoment.baseUrl}/users`,{
             headers:{
-                "Accept":"application/vnd.github+json",                
+                "Accept":"application/vnd.github+json",
+                // "Authorization": `Bearer ${envirnoment.token}`,
                 "X-Github-Api-Version": "2022-11-28"               
             }
         })
@@ -27,7 +28,7 @@ export class GithubApiService{
         return this.http.get<GitUser[]>(`${envirnoment.baseUrl}/users/${username}`,{
             headers:{
                 "Accept":"application/vnd.github+json",
-                "Authorization": `Bearer ${envirnoment.token}`,
+                // "Authorization": `Bearer ${envirnoment.token}`,
                 "X-Github-Api-Version": "2022-11-28"                                
             }
         })
