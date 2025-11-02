@@ -1,7 +1,7 @@
 
 
 <div class="search-container">
-    <div class="search-item">
+    <div class="search-item" [ngClass]="isEmpty === true ? 'empty' : ''">
             <input 
             (keyup.enter)="handleSearchClick()"           
             type="seacrh" 
@@ -15,7 +15,7 @@
             </div>
     </div>
 
-    <div class="results-container">
+    <div class="results-container" *ngIf="isEmpty === false">
         <a href="{{user.html_url}}" target="_blank" class="result-block" *ngFor="let user of allUsers">
             <div class="img">
                 <img src="{{user.avatar_url}}" alt="Abdullah2834">

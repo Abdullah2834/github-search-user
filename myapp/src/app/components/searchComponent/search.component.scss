@@ -28,6 +28,9 @@
     align-items: center;
     justify-content: space-between;
     gap: 24px;
+    &.empty{
+        margin: 40% 0 60px;
+    }
 }
 
 .results-container{

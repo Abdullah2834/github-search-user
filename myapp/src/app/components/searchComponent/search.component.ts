@@ -15,7 +15,7 @@ import { GithubApiService } from "../../services/github.service";
 export class SearchComponent{    
     searchUser = ""
     isError:any = false
-    isEmpty:any = false
+    isEmpty:any = true
     @Input() allUsers:any
     @Input() tempAllUsers:any    
     @Output() loadingChange = new EventEmitter<any>;
@@ -36,7 +36,10 @@ export class SearchComponent{
         this.loadingChange.emit(true)
         this.apiService.getUserByUsername(this.searchUser).subscribe((res: GitUser[])=>{        
             this.allUsers = [res]                
-            this.loadingChange.emit(false)           
+            this.loadingChange.emit(false)     
+            this.isEmpty= false      
+            console.log("res",res);
+            
         },(err:any)=>{            
             this.isError = true                                   
             this.loadingChange.emit(false)
@@ -46,6 +49,7 @@ export class SearchComponent{
             console.log("err",err); 
                               
         })
+        
     }
 
 }
