@@ -16,8 +16,7 @@ export class GithubApiService{
 
         return this.http.get<GitUser[]>(`${envirnoment.baseUrl}/users`,{
             headers:{
-                "Accept":"application/vnd.github+json",
-                "Authorization": `Bearer ${envirnoment.token}`,
+                "Accept":"application/vnd.github+json",                
                 "X-Github-Api-Version": "2022-11-28"               
             }
         })
