@@ -1,0 +1,87 @@
+
+
+<div class="search-container">
+    <div class="search-item">
+            <input 
+            (keyup.enter)="handleSearchClick()"           
+            type="seacrh" 
+            placeholder="Kullanıcı Adı..." 
+            id="searchUser" 
+            name="searchUser" 
+            [(ngModel)]="searchUser">
+
+            <div class="btn" (click)="handleSearchClick()">
+                <span>Ara</span>
+            </div>
+    </div>
+
+    <div class="results-container">
+        <a href="{{user.html_url}}" target="_blank" class="result-block" *ngFor="let user of allUsers">
+            <div class="img">
+                <img src="{{user.avatar_url}}" alt="Abdullah2834">
+            </div>
+            <div class="text">
+                <h4>{{user.login}}</h4>
+            </div>
+        </a>
+        <!-- <a href="#" class="result-block">
+            <div class="img">
+                <img src="https://fastly.picsum.photos/id/140/150/150.jpg?hmac=KfW7ZBSKOlqZOyxuZYz5-FnpdFWXI-ncbM0wRKy2mLg" alt="Abdullah2834">
+            </div>
+            <div class="text">
+                <h4>Abdullah2834</h4>
+            </div>
+        </a>
+        <a href="#" class="result-block">
+            <div class="img">
+                <img src="https://fastly.picsum.photos/id/140/150/150.jpg?hmac=KfW7ZBSKOlqZOyxuZYz5-FnpdFWXI-ncbM0wRKy2mLg" alt="Abdullah2834">
+            </div>
+            <div class="text">
+                <h4>Abdullah2834</h4>
+            </div>
+        </a>
+        <a href="#" class="result-block">
+            <div class="img">
+                <img src="https://fastly.picsum.photos/id/140/150/150.jpg?hmac=KfW7ZBSKOlqZOyxuZYz5-FnpdFWXI-ncbM0wRKy2mLg" alt="Abdullah2834">
+            </div>
+            <div class="text">
+                <h4>Abdullah2834</h4>
+            </div>
+        </a>
+        <a href="#" class="result-block">
+            <div class="img">
+                <img src="https://fastly.picsum.photos/id/140/150/150.jpg?hmac=KfW7ZBSKOlqZOyxuZYz5-FnpdFWXI-ncbM0wRKy2mLg" alt="Abdullah2834">
+            </div>
+            <div class="text">
+                <h4>Abdullah2834</h4>
+            </div>
+        </a>
+        <a href="#" class="result-block">
+            <div class="img">
+                <img src="https://fastly.picsum.photos/id/140/150/150.jpg?hmac=KfW7ZBSKOlqZOyxuZYz5-FnpdFWXI-ncbM0wRKy2mLg" alt="Abdullah2834">
+            </div>
+            <div class="text">
+                <h4>Abdullah2834</h4>
+            </div>
+        </a>
+        <a href="#" class="result-block">
+            <div class="img">
+                <img src="https://fastly.picsum.photos/id/140/150/150.jpg?hmac=KfW7ZBSKOlqZOyxuZYz5-FnpdFWXI-ncbM0wRKy2mLg" alt="Abdullah2834">
+            </div>
+            <div class="text">
+                <h4>Abdullah2834</h4>
+            </div>
+        </a>
+        <a href="#" class="result-block">
+            <div class="img">
+                <img src="https://fastly.picsum.photos/id/140/150/150.jpg?hmac=KfW7ZBSKOlqZOyxuZYz5-FnpdFWXI-ncbM0wRKy2mLg" alt="Abdullah2834">
+            </div>
+            <div class="text">
+                <h4>Abdullah2834</h4>
+            </div>
+        </a> -->
+    </div>
+    <div class="err-msg" [ngClass]="isError === true ? 'show' : ''">
+        <span>Aradığınız Kullanıcı Bulunamadı</span>
+    </div>
+</div>

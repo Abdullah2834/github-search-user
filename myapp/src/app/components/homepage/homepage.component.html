@@ -1,0 +1,12 @@
+<div class="home-root">
+    <div class="loader-wrapper" *ngIf="isLoading === true">
+        <div class="loader"></div>
+    </div>
+    <div class="home-wrapper">
+        <search-component 
+            (loadingChange)="onLoadingChange($event)"
+            [tempAllUsers] = "tempAllUsers"
+            [allUsers]="allUsers">
+        </search-component>
+    </div>    
+</div>

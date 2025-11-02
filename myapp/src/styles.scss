@@ -1,0 +1,22 @@
+@use "./app/components/homepage/homepage.component.scss";
+@use "./app/components/searchComponent/search.component.scss";
+
+
+*{
+    background: #333;
+    color: #fff; 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Noto Sans",Arial, Helvetica, sans-serif;
+}
+
+img{
+    max-width: 100%;
+    object-fit: cover;
+}
+
+span{
+    background: transparent;
+}
+

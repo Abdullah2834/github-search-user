@@ -1,0 +1,227 @@
+.search-container{
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;   
+
+    input{
+        width: 100%;
+        border-color: #fff;
+        border-radius: 30px;
+        height: 60px;
+        padding: 0 24px 0;
+        font-size: 24px;
+        line-height: 35px;
+        transition: 0.2s;
+
+        &:focus, &:focus-visible{
+            outline: none;
+            box-shadow: 0 0 13px rgba(255,255,255,0.5);
+            transition: 0.2s;
+        }
+      
+    }
+}
+
+.search-item{
+    margin: 40px 0 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.results-container{
+    max-height: 71vh;  
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 0 8px 0 0;
+
+    &::-webkit-scrollbar{
+        background-color: transparent;               
+        width: 4px;               
+    }
+
+    &::-webkit-scrollbar-thumb{      
+        background: #fff;
+        border-radius: 6px;
+        
+    }
+
+    &::-webkit-scrollbar-track{
+        background: none;
+       
+    }
+    
+}
+
+.btn{
+    border: 1px solid #fff;
+    width: 100px;
+    min-width: 100px;
+    height: 60px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+    cursor: pointer;
+
+    span{       
+        font-size: 18px;
+        line-height: 24px;
+        background: transparent;
+    }
+
+    &:hover{
+        background: #fff;
+        transition: 0.2s;
+        span{
+            color: #000;
+            transition: 0.2s;
+        }
+    }
+}
+
+.result-block{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 24px;
+    border: 1px solid #fff;
+    transition: 0.2s;
+    padding: 24px;
+    text-decoration: none;
+    border-radius: 16px;
+    margin: 0 0 18px 0;
+    overflow: hidden;
+
+    .img{
+        width: 100px;
+        height: 100px;
+        min-width: 100px;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    &:hover{
+        box-shadow: 0 0 13px rgba(255,255,255,0.5);
+        transition: 0.2s;
+    }
+
+    h4{
+        font-size: 24px;
+        line-height: 35px;        
+    }
+}
+
+.err-msg{
+    position: fixed;
+    top: 0;
+    left:-100%;
+    background: red;
+    color: #fff;
+    border-radius: 0 16px 16px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 350px;
+    padding: 20px 12px;
+    transition: 0.3s;
+    span{
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: 600;
+    }
+    &.show{
+        left: 0;
+        transition: 0.3s;
+    }
+}
+
+
+
+
+@media screen and (max-width: 992px){
+    .results-container{
+        max-height: 79vh;  
+    }
+    
+    .search-item{
+        position: sticky;
+        top: 40px;    
+    }
+    
+}
+
+@media screen and (max-width: 768px){
+   
+     
+
+    .result-block{
+        gap: 12px;
+        padding: 18px;
+       
+
+        .img{
+            width: 80px;
+            height: 80px;
+            min-width: 80px;
+        }
+
+        h4{
+            font-size: 16px;
+            line-height: 24px;
+        }
+    }
+
+    .search-container{
+        input{
+            border-radius: 12px;
+            height: 46px;
+            padding: 0 18px 0;
+            font-size: 14px;
+            line-height: 24px;
+        }
+    }
+
+    .search-item{
+        
+        margin: 26px 0 36px;
+        gap: 14px;
+    }
+
+    .err-msg{   
+        top: auto;
+        bottom: -100%;    
+        max-width: inherit;
+        padding: 10px 16px;
+        border-radius: 0;
+        span{
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 600;
+        }
+        &.show{
+            left: 0;
+            bottom:0;
+            transition: 0.3s;
+        }
+    }
+
+    .btn{        
+        min-width: 80px;
+        height: 46px;
+        border-radius: 12px;  
+        span{       
+            font-size: 14px;
+            line-height: 20px;
+            background: transparent;
+        }
+
+       
+    }
+}
+
+
